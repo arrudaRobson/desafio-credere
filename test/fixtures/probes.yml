@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  xAxis: 1
+  yAxis: 1
+  face: MyString
+
+two:
+  xAxis: 1
+  yAxis: 1
+  face: MyString
