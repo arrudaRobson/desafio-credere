@@ -27,7 +27,7 @@ Antes de rodar o projeto é necessário que você tenha instalado na sua máquin
 
 Após realizar os passos descritos acima, siga os passos abaixo para utilizar no ambiente de desenvolvimento:
 
-**1**. Clone o projeto
+**1**. Clone o projeto e entre no mesmo
 ```
 $ git clone https://github.com/arrudaRobson/desafio-credere
 $ cd desafio-credere
