@@ -48,6 +48,13 @@ $ rails db:migrate
 $ rails s
 ```
 
+## Testes
+
+Para rodar os testes é necessaário estar no diretório do projeto e executar o comando:
+```
+$ rspec
+```
+
 ## Usando a API
 
 Para acessar os endpoints da aplicação, consulte a documentação da API:
