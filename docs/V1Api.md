@@ -1,179 +1,166 @@
-# DesafioCredere::V1Api
+# Credere API::V1
 
-All URIs are relative to *http://localhost:3000/v1*
+Todas URIs são relativas à *https://credereapi.herokuapp.com/v1*
 
-HTTP request | Description
-------------- | -------------
-**POST** /probe | Cria uma sonda
-**GET** /probe/{id}/position | Exibe a posição da sonda
-**PUT** /probe/{id}/move | Move a sonda
-**PUT** /probe/{id}/position/reset | Retorna sonda para posição inicial
+### Autorização
 
-
-## **POST** /probe **
-> InlineResponse200 v1_probe_id_move_put(id)
-
-Move a sonda
-
-Executa comandos para movimentar a sonda
-
-### Example
-```json
-
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-No authorization required
+Não é requerida autorização.
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+HTTP requisição | Descrição | Exemplo
+------------- | ------------- | -------------
+**POST** /probe | Cria uma sonda | *https://credereapi.herokuapp.com/v1/probe*
+**GET** /probe/{id}/position | Exibe a posição da sonda | *https://credereapi.herokuapp.com/v1/probe/1/position*
+**PUT** /probe/{id}/move | Move a sonda | *https://credereapi.herokuapp.com/v1/probe/1/move*
+**PUT** /probe/{id}/position/reset | Retorna sonda para posição inicial | *https://credereapi.herokuapp.com/v1/probe/1/position/reset*
 
 
-# **v1_probe_id_position_get**
-> InlineResponse2001 v1_probe_id_position_get(id)
+## **POST** /probe
+
+Cria a sonda
+
+Cria sonda na posição padrão 
+```json
+{
+  "xAxis": 0,
+  "yAxix": 0,
+  "face": "D"
+}
+```
+### Code
+**200** ```OK```
+### Exemplo de resposta
+```json
+{
+  "data": {
+    "id": 1,
+    "xAxis": 0,
+    "yAxis": 0,
+    "face": "D",
+    "created_at": "2018-12-26T03:31:04.484Z",
+    "updated_at": "2018-12-26T03:31:04.484Z"
+  }
+}
+```
+**500** ```Erro interno no servidor```
+
+## **GET** /probe/{id}/position
 
 Exibe a posição da sonda
 
 Exibe a posição em que a sonda está
 
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
+### Parametros
 
-api_instance = SwaggerClient::V1Api.new
-
-id = 56 # Integer | 
-
-
-begin
-  #Exibe a posição da sonda
-  result = api_instance.v1_probe_id_position_get(id)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling V1Api->v1_probe_id_position_get: #{e}"
-end
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
+Nome | Tipo | Descrição | Exemplo
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
+ **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/position
 
-### Return type
-
-[**InlineResponse2001**](InlineResponse2001.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **v1_probe_id_position_reset_put**
-> v1_probe_id_position_reset_put(id)
-
-Retorna sonda para posição inicial
-
-Retorna a sonda para o ponto inicial xAxis = 0, yAxis = 0 e face = D
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-
-api_instance = SwaggerClient::V1Api.new
-
-id = 56 # Integer | 
-
-
-begin
-  #Retorna sonda para posição inicial
-  api_instance.v1_probe_id_position_reset_put(id)
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling V1Api->v1_probe_id_position_reset_put: #{e}"
-end
+### Code
+**200** ```OK```
+### Exemplo de resposta
+```json
+{
+  "xAxis": 0,
+  "yAxix": 0,
+  "face": "D"
+}
 ```
+**404** ```Sonda não encontrada```
+**500** ```Erro interno no servidor```
 
-### Parameters
+## **PUT** /probe/{id}/move
 
-Name | Type | Description  | Notes
+Move a sonda
+
+Executa comandos para movimentar a sonda
+
+### Parametros
+
+Nome | Tipo | Descrição | Exemplo
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer**|  | 
+ **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/move
+ **movements** | **Array** | requerido no body | "movements": ["M", "M"]
 
-### Return type
+### Code
+**200** ```OK```
 
-nil (empty response body)
+### Body
+```json
+{
+	"movements": ["M", "M"]
+}
+```
+### Exemplo de resposta
+```json
+{
+  "xAxis": 2,
+  "yAxis": 0
+}
+```
+**404** ```Sonda não encontrada```
+**422** ```Unprocessable Entity```
 
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-
-# **v1_probe_post**
-> InlineResponse200 v1_probe_post
-
-Cria uma sonda
-
-Cria uma sonda com posição padrão
-
-### Example
-```ruby
-# load the gem
-require 'swagger_client'
-
-api_instance = SwaggerClient::V1Api.new
-
-begin
-  #Cria uma sonda
-  result = api_instance.v1_probe_post
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling V1Api->v1_probe_post: #{e}"
-end
+### Body
+```json
+{
+	"movements": ["GD", "M", "M"]
+}
 ```
 
-### Parameters
-This endpoint does not need any parameter.
+### Exemplo de resposta
+```json
+{
+  "message_error": "Um movimento inválido foi detectado!"
+}
+```
 
-### Return type
+### Body
+```json
+{
+	"movements": ["M", "M", "M", "M", "M", "M", "M"]
+}
+```
 
-[**InlineResponse200**](InlineResponse200.md)
+### Exemplo de resposta
+```json
+{
+  "message_error": "A sonda saiu do nosso alcançe!"
+}
+```
 
-### Authorization
+**500** ```Erro interno no servidor```
 
-No authorization required
+## **PUT** /probe/{id}/position/reset
 
-### HTTP request headers
+Retorna para posição padrão
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+Retorna a sonda para sua posição inicial
+```json
+{
+  "xAxis": 0,
+  "yAxix": 0,
+  "face": "D"
+}
+```
+
+### Parametros
+
+Nome | Tipo | Descrição | Exemplo
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/position/reset
 
 
+### Code
+**204** ```No content```
 
+### Exemplo de resposta
+```
+
+```
+**404** ```Sonda não encontrada```
+**500** ```Erro interno no servidor```
