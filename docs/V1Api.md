@@ -71,6 +71,7 @@ Nome | Tipo | Descrição | Exemplo
 }
 ```
 **404** ```Sonda não encontrada```
+
 **500** ```Erro interno no servidor```
 
 ## **PUT** /probe/{id}/move
@@ -103,6 +104,7 @@ Nome | Tipo | Descrição | Exemplo
 }
 ```
 **404** ```Sonda não encontrada```
+
 **422** ```Unprocessable Entity```
 
 ### Body
@@ -163,4 +165,5 @@ Nome | Tipo | Descrição | Exemplo
 
 ```
 **404** ```Sonda não encontrada```
+
 **500** ```Erro interno no servidor```
