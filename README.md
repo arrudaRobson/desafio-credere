@@ -25,7 +25,7 @@ Antes de rodar o projeto é necessário que você tenha instalado na sua máquin
 
 ## Desenvolvimento
 
-Após os passos descritos acima:
+Após realizar os passos descritos acima, siga os passos abaixo para utilizar no ambiente de desenvolvimento:
 
 **1**. Clone o projeto
 ```
