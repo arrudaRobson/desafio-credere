@@ -58,7 +58,7 @@ Para acessar os endpoints da aplicação, consulte a documentação da API:
 
 *[Ruby 2.5.3](https://www.ruby-lang.org/pt/)
 
-*[Ruby On Rails 5.2.1](https://rubyonrails.org/)
+*[Ruby On Rails 5.2.2](https://rubyonrails.org/)
 
 *[Postgresql 10.6](https://www.postgresql.org/)
 
