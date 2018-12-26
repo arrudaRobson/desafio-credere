@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: credere-api_production
+  database: credere-api
   username: credere-api
   password: <%= ENV['CREDERE-API_DATABASE_PASSWORD'] %>
