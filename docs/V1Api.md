@@ -1,6 +1,6 @@
 # Credere API::V1
 
-Todas URIs são relativas à *https://credereapi.herokuapp.com/v1*
+Todas URIs são relativas à em produção *https://credereapi.herokuapp.com/v1*, para desenvolvimento *http://localhost:3000/v1*
 
 ### Autorização
 
@@ -15,7 +15,7 @@ HTTP requisição | Descrição | Exemplo
 ------------- | ------------- | -------------
 **POST** /probe | Cria uma sonda | *https://credereapi.herokuapp.com/v1/probe*
 **GET** /probe/{id}/position | Exibe a posição da sonda | *https://credereapi.herokuapp.com/v1/probe/1/position*
-**PUT** /probe/{id}/move | Move a sonda | *https://credereapi.herokuapp.com/v1/probe/1/move*
+**PATCH** /probe/{id}/move | Move a sonda | *https://credereapi.herokuapp.com/v1/probe/1/move*
 **PUT** /probe/{id}/position/reset | Retorna sonda para posição inicial | *https://credereapi.herokuapp.com/v1/probe/1/position/reset*
 
 
@@ -74,7 +74,7 @@ Nome | Tipo | Descrição | Exemplo
 
 **500** ```Erro interno no servidor```
 
-## **PUT** /probe/{id}/move
+## **PATCH** /probe/{id}/move
 
 Move a sonda
 
