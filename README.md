@@ -55,6 +55,8 @@ Para rodar os testes é necessaário estar no diretório do projeto e executar o
 $ rspec
 ```
 
+Para testar os endpoints utilizei o postman.
+
 ## Usando a API
 
 Para acessar os endpoints da aplicação, consulte a documentação da API:
@@ -73,7 +75,7 @@ Para acessar os endpoints da aplicação, consulte a documentação da API:
 
 Antes de usar a API em produção leia a **[documentação](https://github.com/arrudaRobson/desafio-credere/blob/master/docs/V1Api.md)**
 
-[Produção](https://credereapi.herokuapp.com)
+[Ambiente de produção](https://credereapi.herokuapp.com)
 
 ## Mantenedor
 
