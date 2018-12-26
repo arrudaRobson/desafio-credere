@@ -1,16 +1,16 @@
-# DesafioCredereAPI::V1Api
+# DesafioCredere::V1Api
 
 All URIs are relative to *http://localhost:3000/v1*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**v1_probe_id_move_put**](V1Api.md#v1_probe_id_move_put) | **PUT** /v1/probe/{id}/move | Move a sonda
-[**v1_probe_id_position_get**](V1Api.md#v1_probe_id_position_get) | **GET** /v1/probe/{id}/position | Exibe a posição da sonda
-[**v1_probe_id_position_reset_put**](V1Api.md#v1_probe_id_position_reset_put) | **PUT** /v1/probe/{id}/position/reset | Retorna sonda para posição inicial
-[**v1_probe_post**](V1Api.md#v1_probe_post) | **POST** /v1/probe | Cria uma sonda
+HTTP request | Description
+------------- | -------------
+**POST** /probe | Cria uma sonda
+**GET** /probe/{id}/position | Exibe a posição da sonda
+**PUT** /probe/{id}/move | Move a sonda
+**PUT** /probe/{id}/position/reset | Retorna sonda para posição inicial
 
 
-# **v1_probe_id_move_put**
+## **POST** /probe **
 > InlineResponse200 v1_probe_id_move_put(id)
 
 Move a sonda
@@ -18,22 +18,8 @@ Move a sonda
 Executa comandos para movimentar a sonda
 
 ### Example
-```ruby
-# load the gem
-require 'swagger_client'
+```json
 
-api_instance = SwaggerClient::V1Api.new
-
-id = 56 # Integer | 
-
-
-begin
-  #Move a sonda
-  result = api_instance.v1_probe_id_move_put(id)
-  p result
-rescue SwaggerClient::ApiError => e
-  puts "Exception when calling V1Api->v1_probe_id_move_put: #{e}"
-end
 ```
 
 ### Parameters
