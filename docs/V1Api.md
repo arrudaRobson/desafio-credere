@@ -85,7 +85,7 @@ Executa comandos para movimentar a sonda
 Nome | Tipo | Descrição | Exemplo
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/move
- **movements** | **Json** | requerido no body | "movements": ["M", "M"]
+ **movements** | **Array** | requerido no body | "movements": ["M", "M"]
 
 ### Code
 **200** ```OK```
