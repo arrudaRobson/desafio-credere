@@ -23,7 +23,7 @@ HTTP requisição | Descrição | Exemplo
 
 Cria a sonda
 
-Cria sonda na posição padrão 
+Cria sonda na posição padrão
 ```json
 {
   "xAxis": 0,
@@ -85,7 +85,7 @@ Executa comandos para movimentar a sonda
 Nome | Tipo | Descrição | Exemplo
 ------------- | ------------- | ------------- | -------------
  **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/move
- **movements** | **Array** | requerido no body | "movements": ["M", "M"]
+ **movements** | **Json** | requerido no body | "movements": ["M", "M"]
 
 ### Code
 **200** ```OK```
@@ -173,9 +173,9 @@ Nome | Tipo | Descrição | Exemplo
 ## Probe
 Name | Type |
 ------------ | ------------- |
-**id** | **Integer** | 
-**x_axis** | **Integer** | 
-**y_axis** | **Integer** | 
-**face** | **String** | 
-**created_at** | **String** | 
+**id** | **Integer** |
+**x_axis** | **Integer** |
+**y_axis** | **Integer** |
+**face** | **String** |
+**created_at** | **String** |
 **updated_at** | **String** |
