@@ -19,12 +19,16 @@ A sonda aceita três comandos:
 Esperamos três endpoints, um que envie a sonda para a posição inicial (0,0); outro deve receber o movimento da sonda e responder com as coordenadas finais, caso o movimento seja válido ou erro caso o movimento seja inválido; e o terceiro deve responder apenas com as coordenadas atuais x e y da sonda.
 
 
-## Pré-requisito
+## Pré-requisitos
 
+### Sem Docker
 Antes de rodar o projeto é necessário que você tenha instalado na sua máquina o * **[Ruby](https://www.ruby-lang.org/pt/documentation/installation/)**, **[Ruby On Rails](https://guides.rubyonrails.org/v5.0/getting_started.html)** e o * **[Postgresql](https://www.postgresql.org/download/)**.
 
+### Com Docker
+Antes de rodar o projeto é necessário que você tenha instalado na sua máquina o * **[Docker](https://www.docker.com/) (docker compose)** - Para instalar o docker, [consulte a documentação oficial](https://docs.docker.com/engine/installation/) de acordo com seu sistema operacional.
 ## Desenvolvimento
 
+### Sem Docker
 Após realizar os passos descritos acima, siga os passos abaixo para utilizar no ambiente de desenvolvimento:
 
 **1**. Clone o projeto e entre no mesmo
@@ -46,6 +50,30 @@ $ rails db:migrate
 **5**. Inicie a aplicação
 ```
 $ rails s
+```
+### Com Docker
+Após realizar os passos descritos acima, siga os passos abaixo para utilizar no ambiente de desenvolvimento:
+
+**1**. Clone o projeto e entre no mesmo
+```
+$ git clone https://github.com/arrudaRobson/desafio-credere
+$ cd desafio-credere
+```
+
+**2**. Faça o build do container da aplicação
+```
+$ docker-compose build
+```
+
+**3**. Crie um novo container para o banco de dados PostgreSQL e rode as migrations
+```
+$ docker-compose run api rake db:create
+$ docker-compose run api rake db:migrate
+```
+
+**4**. Suba os containers
+```
+$ docker-compose up
 ```
 
 ## Testes
@@ -69,7 +97,7 @@ Para acessar os endpoints da aplicação, consulte a documentação da API:
 
 *[Ruby On Rails 5.2.2](https://rubyonrails.org/)
 
-*[Postgresql 10.6](https://www.postgresql.org/)
+*[Postgresql 9.5](https://www.postgresql.org/)
 
 ## Aplicação em produção
 
