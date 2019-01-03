@@ -1,10 +1,4 @@
 class V1::ProbeController < ApplicationController
-  def index
-    @message =  {
-      'message': 'Resource not found'
-    }
-    render json: @message
-  end
   #get probe position /v1/probe/:id/position
   def position
     probe = Probe.find(params[:id])
