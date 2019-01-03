@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   namespace :v1, defaults: { format: :json } do
     get '/', to: 'probe#index'
     get 'probe/:id/position', to: 'probe#position'
-    patch 'probe/:id/move', to: 'probe#move'
+    patch 'probe/:id/movement', to: 'probe#move'
     post 'probe', to: 'probe#create'
-    put 'probe/:id/position/reset', to: 'probe#reset'
+    put 'probe/:id/position/initial', to: 'probe#reset'
   end
 end
