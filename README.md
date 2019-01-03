@@ -12,7 +12,7 @@ A sonda aceita três comandos:
 
 - `GE` - girar 90 graus à esquerda
 - `GD` - girar 90 graus à direta
-- `M` - movimentar. Para cada comando `M` a sonda se move uma posição na direção à qual sua face está apontada.
+- `M`  - movimentar. Para cada comando `M` a sonda se move uma posição na direção à qual sua face está apontada.
 
 **Endpoints**
 
