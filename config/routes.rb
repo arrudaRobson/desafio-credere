@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get '/', to: 'base#index'
+  root 'application#route_not_found'
+  match '*unmatched', to: 'application#route_not_found', via: :all
   namespace :v1, defaults: { format: :json } do
-    get '/', to: 'probe#index'
     get 'probe/:id/position', to: 'probe#position'
     patch 'probe/:id/movement', to: 'probe#move'
     post 'probe', to: 'probe#create'
