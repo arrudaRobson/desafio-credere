@@ -74,7 +74,7 @@ Nome | Tipo | Descrição | Exemplo
 
 **500** ```Erro interno no servidor```
 
-## **PATCH** /probe/{id}/move
+## **PATCH** /probe/{id}/movement
 
 Move a sonda
 
@@ -137,7 +137,7 @@ Nome | Tipo | Descrição | Exemplo
 
 **500** ```Erro interno no servidor```
 
-## **PUT** /probe/{id}/position/reset
+## **PUT** /probe/{id}/position/initial
 
 Retorna para posição padrão
 
