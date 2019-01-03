@@ -75,10 +75,9 @@ $ docker-compose run api rake db:migrate
 ```
 $ docker-compose up
 ```
-
-<aside class="danger">
+<span style="color:red">
 Em seu primeiro uso banco de dados estará limpo envie alguns posts para começar a usar a aplicação
-</aside>
+</span>
 
 ## Testes
 
