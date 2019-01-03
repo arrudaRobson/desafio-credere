@@ -15,8 +15,8 @@ HTTP requisição | Descrição | Exemplo
 ------------- | ------------- | -------------
 **POST** /probe | Cria uma sonda | *https://credereapi.herokuapp.com/v1/probe*
 **GET** /probe/{id}/position | Exibe a posição da sonda | *https://credereapi.herokuapp.com/v1/probe/1/position*
-**PATCH** /probe/{id}/move | Move a sonda | *https://credereapi.herokuapp.com/v1/probe/1/move*
-**PUT** /probe/{id}/position/reset | Retorna sonda para posição inicial | *https://credereapi.herokuapp.com/v1/probe/1/position/reset*
+**PATCH** /probe/{id}/movement | Move a sonda | *https://credereapi.herokuapp.com/v1/probe/1/movement*
+**PUT** /probe/{id}/position/initial | Retorna sonda para posição inicial | *https://credereapi.herokuapp.com/v1/probe/1/position/initial*
 
 
 ## **POST** /probe
@@ -84,7 +84,7 @@ Executa comandos para movimentar a sonda
 
 Nome | Tipo | Descrição | Exemplo
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/move
+ **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/movement
  **movements** | **Array** | requerido no body | "movements": ["M", "M"]
 
 ### Code
@@ -154,7 +154,7 @@ Retorna a sonda para sua posição inicial
 
 Nome | Tipo | Descrição | Exemplo
 ------------- | ------------- | ------------- | -------------
- **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/position/reset
+ **id** | **Integer** | requerida na URI | https://credereapi.herokuapp.com/v1/probe/1/position/initial
 
 
 ### Code
