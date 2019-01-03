@@ -21,6 +21,8 @@ Esperamos três endpoints, um que envie a sonda para a posição inicial (0,0); 
 
 ## Pré-requisitos
 
+Deixo disponíveis dusa formas de utilização em ambiente de desenvolvimento, agora escolha a de sua preferência e divirta-se :)
+
 ### Sem Docker
 Antes de rodar o projeto é necessário que você tenha instalado na sua máquina o * **[Ruby](https://www.ruby-lang.org/pt/documentation/installation/)**, **[Ruby On Rails](https://guides.rubyonrails.org/v5.0/getting_started.html)** e o * **[Postgresql](https://www.postgresql.org/download/)**.
 
